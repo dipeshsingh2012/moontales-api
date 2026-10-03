@@ -10,6 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.story import router as story_router
+from app.api.v1.cues import router as cues_router
 from app.core.firebase_auth import initialize_firebase
 
 # ── Logging ───────────────────────────────────────────────────────────────────
@@ -67,6 +68,7 @@ app.add_middleware(
 
 # ── Routers ───────────────────────────────────────────────────────────────────
 app.include_router(story_router)
+app.include_router(cues_router)
 
 
 # ── Health check ──────────────────────────────────────────────────────────────
